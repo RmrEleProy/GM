@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head"}}
+
+<body class="grid">
+    <header class="header">
+        <h2>
+            Agrega un gasto a la ves
+            <i class="ri-moon-fill change-theme" id="theme-button"></i>
+        </h2>
+    </header>
+    <aside class="aside">
+        <a href="/" class="button black__border">volver</a>
+    </aside>
+    <main class="main">
+        <!-- esto va en action="/Insert" -->
+        <form action="" method="post" class="form__minimalista">
+            <h2>Gasto a agregar</h2>
+
+            <div class="input-group">
+                <label for="idmes">Mes:</label>
+                <select name="idmes" id="idmes">
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
+            <div class="input-group">
+                <label for="importe">Monto:</label>
+                <input type="number" inputmode="numeric" step="any" min="0" id="importe" name="importe" required>
+            </div>
+            <div class="input-group">
+                <label for="concepto">Concepto:</label>
+                <input type="text" id="concepto" name="concepto" required minlength="4" maxlength="256" size="50"
+                    required>
+            </div>
+            <div class="input-group">
+                <label for="tipocosto">Tipo de gasto:</label>
+                <select name="tipocosto" id="tipocosto">
+                    <option value="fijo">Fijo</option>
+                    <option value="variable">Variable</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Agregar gasto" onclick="ValidarFormulario()" class="modern-ui-button">
+        </form>
+    </main>
+    {{template "footer"}}
+    <script src="/Static/js/theme.js"></script>
+</body>
+
+</html>

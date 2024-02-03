@@ -1,0 +1,48 @@
+.boton {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.boton:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  filter: blur(1px);
+  color: black;
+}
+
+.boton:active {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  left: 2px;
+  top: 2px;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(6, 150px);
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .contenedor {
+    grid-template-columns: repeat(3, 150px);
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor {
+    grid-template-columns: repeat(2, 150px);
+  }
+}
+
+/* body {
+  background-image: url(/Static/media/img/endless-constellation.svg);
+} */

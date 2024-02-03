@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head"}}
+
+<body class="grid">
+  <header class="header">
+    <h1>Gastos Mensuales</h1>
+    <i class="ri-moon-fill change-theme" id="theme-button"></i>
+  </header>
+
+  <nav class="nav" id="nav">
+    <a href="/newexpence" class="button transparent">Agregar nuevo gasto</a>
+  </nav>
+
+  <aside class="aside">
+    <div class="menu__lateral">
+      <a href="/" class="button transparent">Todos</a>
+      {{range .Vmeses}}
+      <form action="/mes" method="post" class="form__paraListas">
+        <input type="hidden" name="id" id="id" value="{{.Id}}">
+        <input type="submit" value="{{.Mes}}" class="button transparent">
+        <!-- <a href="/mes?id={{.Id}}" class="button transparent">{{.Mes}}</a> -->
+      </form>
+      <!-- <input type="hidden" name="IDM" id="IDM" value="{{.Id}}"> -->
+      {{end}}
+    </div>
+  </aside>
+
+  <main class="main">
+    <table class="modern-ui-table">
+      <thead>
+        <tr>
+          <th width="200px">FECHA</th>
+          <th width="100px">MONTO</th>
+          <th width="200px">TIPO DE GASTO</th>
+          <th>CONCEPTO</th>
+          <th width="100px">{{template "giroGear"}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{range .VGM}}
+        <tr>
+          <td>{{.Fecha}}</td>
+          <td>{{.Importe}}</td>
+          <td>{{.Tipocosto}}</td>
+          <td>{{.Concepto}} </td>
+          <td>
+            <div class="dropdown">
+              <span class="dropbtn">Opciones</span>
+              <div class="dropdown-content">
+                <a href="/edit?id={{.Id}}&idm= {{.Idmes}}">Editar</a>
+                <a href="/Delete?id={{.Id}}" onclick="return Delete()">Borrar</a>
+                <input type="hidden" name="Idgm" id="Idgm" value="{{.Id}}">
+              </div>
+            </div>
+          </td>
+        </tr>
+        {{end}}
+
+        {{if .Totalmes}}
+        <tr>
+          {{range .Totalmes}}
+          <td>total del mes</td>
+          <td>{{.Totalmes}}</td>
+          {{end}}
+        </tr>
+        {{end}}
+      </tbody>
+    </table>
+    <canvas id="graficatotal"></canvas>
+  </main>
+  {{template "footer"}}
+
+  {{template "scripts"}}
+
+</body>
+
+</html>

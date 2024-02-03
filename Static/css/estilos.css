@@ -1,0 +1,253 @@
+/* \2709\fe0e muestra un icono de correo */
+
+.grid {
+  display: grid;
+  width: 100%;
+  height: 250px;
+  grid-template-areas:
+    "header header"
+    "aside nav"
+    "aside  main"
+    "aside  footer";
+  grid-template-rows: auto;
+  grid-template-columns: 200px 1fr;
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
+}
+
+.nav {
+  grid-area: nav;
+  padding: 10px;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+  width: 100vh;
+  height: 100vh;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-areas:
+      "header header header header header header"
+      "nav nav nav nav nav nav"
+      "aside aside aside aside aside aside"
+      "main main main main main main"
+      "main main main main main main"
+      "footer footer footer footer footer footer";
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.sidebar li {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.sidebar li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar li a:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.sidebar::before {
+  content: "";
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.sidebar::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.sidebar:active::after {
+  opacity: 1;
+}
+
+.sidebar:active::before {
+  opacity: 1;
+}
+
+.modern-ui-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.modern-ui-table th,
+.modern-ui-table td {
+  padding: 10px;
+}
+
+.modern-ui-table th {
+  text-align: left;
+}
+
+.modern-ui-table thead th {
+  background-color: #0078d4;
+  color: rgb(243, 236, 236);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.modern-ui-table tbody tr td {
+  color: var(--text-color);
+}
+
+.modern-ui-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 5px;
+}
+
+.modern-ui-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}
+
+.modern-ui-table tbody tr:hover td {
+  background-color: #0d1317;
+  color: #bebebe;
+  box-shadow: inset 0 -1px #0078d4, inset -1px 0 #0078d4, inset 0 1px #0078d4,
+    inset 1px 0 #0078d4;
+}
+
+.form__minimalista {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select {
+  padding: 10px;
+  border: 2px solid #000000;
+  border-bottom: 2px solid #ccc;
+  transition: 0.9s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+  outline: none;
+  border-bottom-color: #3b3b3b;
+  box-shadow: #bebebe 0px 5px 0px 0px;
+  background-color: rgb(63, 62, 62);
+  color: #ccc;
+  border-radius: 10px;
+}
+
+.input-group input:invalid {
+  animation: justshake 0.3s forwards;
+  color: red;
+}
+
+@keyframes justshake {
+  25% {
+    transform: translatex(5px);
+  }
+  50% {
+    transform: translatex(-5px);
+  }
+  75% {
+    transform: translatex(5px);
+  }
+  100% {
+    transform: translatex(-5px);
+  }
+}
+
+.dropbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* El contenedor <div> - necesario para posicionar el contenido desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Contenido desplegable (oculto por defecto) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Enlaces dentro del desplegable */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Cambiar color de los enlaces del desplegable al pasar el mouse */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Mostrar el menú desplegable al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Cambiar el color de fondo del botón desplegable cuando se muestra el contenido desplegable */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.titulo {
+  background-color: hsla(0, 0%, 100%, 0.177);
+  text-align: center;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "head"}}
+
+<body class="grid">
+    <header class="header">
+        <h2>
+            Edicion del gasto seleccionado
+        </h2>
+        <i class="ri-moon-fill change-theme" id="theme-button"></i>
+    </header>
+    <nav class="nav">
+
+    </nav>
+    <aside class="aside">
+        <a href="/" class="button black__border">volver</a>
+    </aside>
+    <main class="main">
+        <form action="/Update" method="post" class="form__minimalista">
+            <h2>Formulario para editar un gastos</h2>
+            <input type="hidden" name="id" id="id" value="{{.Id}}">
+            <div class="input-group">
+                <label for="nombreMes">Mes del gasto asociado</label>
+                <select name="Idmes" id="Idmes">
+                    <option value="{{.Idmes}}">{{.Mes}}</option>
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" value="{{.Fecha}}" name="fecha">
+            </div>
+            <div class="input-group">
+                <label for="monto">Monto:</label>
+                <input type="number" step="any" id="importe" name="importe" value="{{.Importe}}">
+            </div>
+            <div class="input-group">
+                <label for="concepto">Concepto:</label>
+                <input type="text" id="concepto" name="concepto" value="{{.Concepto}}" required minlength="4"
+                    maxlength="256" size="50" />
+            </div>
+            <div class="input-group">
+                <label for="tipo">Tipo de gasto:</label>
+                <select name="tipocosto" id="tipocosto">
+                    <option value="{{.Tipocosto}}">{{.Tipocosto}} </option>
+                    <option value="fijo">Fijo</option>
+                    <option value="variable">Variable</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Editar gasto" class="modern-ui-button">
+        </form>
+    </main>
+    <script src="/Static/js/scrip.js"></script>
+</body>
+
+</html>

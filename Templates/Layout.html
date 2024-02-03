@@ -1,0 +1,51 @@
+<!-- Template del head para las paginas -->
+{{define "head"}}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&family=Righteous&display=swap"
+    rel="stylesheet" />
+  <link rel="shortcut icon" href="/static/media/img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/Static/css/theme.css" />
+  <link rel="stylesheet" href="/Static/css/estilos.css" />
+  <link rel="stylesheet" href="/Static/css/buttons.css" />
+  <link rel="stylesheet" href="/Static/css/listas.css" />
+
+  <!-- <link rel="stylesheet" href="/Static/css/Fondo.css" /> -->
+  <link rel="stylesheet" href="/Static/css/pruebas.css" />
+
+  <title>Gastos Mensuales</title>
+</head>
+
+{{end}}
+
+
+<!-- Template para el footer de las paginas -->
+{{define "footer"}}
+<footer class="footer container">
+  <span class="footer__copy">
+    &#169; todos los derechos recervados
+  </span>
+</footer>
+{{end}}
+
+<!-- Template para los scripts -->
+{{define "scripts"}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="/Static/js/theme.js"></script>
+<script src="/Static/js/grafica.js"></script>
+<script src="/Static/js/delete.js"></script>
+{{end}}
+
+{{define "giroGear"}}
+<svg viewBox="0 0 200 200">
+  <path fill="#000000" stroke="#FFffff" stroke-width="15" transform-origin="center"
+    d="m148 84.7 13.8-8-10-17.3-13.8 8a50 50 0 0 0-27.4-15.9v-16h-20v16A50 50 0 0 0 63 67.4l-13.8-8-10 17.3 13.8 8a50 50 0 0 0 0 31.7l-13.8 8 10 17.3 13.8-8a50 50 0 0 0 27.5 15.9v16h20v-16a50 50 0 0 0 27.4-15.9l13.8 8 10-17.3-13.8-8a50 50 0 0 0 0-31.7Zm-47.5 50.8a35 35 0 1 1 0-70 35 35 0 0 1 0 70Z">
+    <animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="0;120" keyTimes="0;1"
+      keySplines="0 0 1 1" repeatCount="indefinite">
+    </animateTransform>
+  </path>
+</svg>
+{{end}}

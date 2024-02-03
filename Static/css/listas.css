@@ -1,0 +1,33 @@
+.modern-ui-list {
+  list-style: none;
+  padding: 0;
+}
+
+.modern-ui-list li {
+  background-color: #f5f5f528;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.modern-ui-list li:last-child {
+  margin-bottom: 0;
+}
+
+.modern-ui-list li:hover {
+  background-color: #ffffff3c;
+  color: rgba(255, 255, 255, 0.012);
+  border-radius: 10%;
+}
+
+.menu__lateral {
+  flex-direction: column;
+}
+
+.menu__lateral form {
+  max-height: 50px;
+}
